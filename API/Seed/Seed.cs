@@ -1,5 +1,5 @@
 using Domain;
-using Microsoft.EntityFrameworkCore;
+
 using Persistence;
 
 namespace API.Seed;
@@ -8,7 +8,7 @@ public static class Seed
     public static DataContext SeedActivities(this DataContext dataContext)
     {
         if (dataContext.Activities.Any()) return dataContext;
-        
+
         dataContext.Activities.Add(new Activity
         {
             Title = "Simple Activity",

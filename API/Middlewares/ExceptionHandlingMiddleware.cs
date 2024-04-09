@@ -1,6 +1,3 @@
-
-using System.Net;
-
 namespace API.Middlewares;
 
 public class ExceptionHandlingMiddleware(
