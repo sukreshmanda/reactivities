@@ -1,6 +1,19 @@
-using API.Controllers;
+using Domain;
+using Persistence;
 
-public class ActivityController(ILogger<ActivityController> logger) : BaseController
+namespace API.Controllers;
+
+public class ActivityController(DataContext dataContext) : BaseCrudController<Activity>
 {
-    private readonly ILogger<ActivityController> logger = logger;
+    private readonly DataContext context = dataContext;
+
+    public override Activity Get(Guid id)
+    {
+        return context.Activities.First(a => a.Id.Equals(id));
+    }
+
+    public override IEnumerable<Activity> GetAll()
+    {
+        return context.Activities;
+    }
 }
