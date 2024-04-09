@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: Persistence/Migrations/20240409085956_InitialCreate.cs
+  checksum: 7e33e727a5b94955d8418a3290ef8cf313b5ecb70892f336ba0bbb68afb91282
+version: ""
