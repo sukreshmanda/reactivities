@@ -1,9 +1,9 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
-[ApiController]
-[Route("health")]
-public class HealthController(ILogger<HealthController> logger) : ControllerBase
+namespace API.Controllers;
+
+public class HealthController(ILogger<HealthController> logger) : BaseController
 {
     private readonly ILogger<HealthController> logger = logger;
 
