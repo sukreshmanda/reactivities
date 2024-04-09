@@ -1,3 +1,4 @@
+using API.Middlewares;
 using API.Seed;
 using Domain;
 using Microsoft.EntityFrameworkCore;
@@ -31,5 +32,6 @@ if (app.Environment.IsDevelopment())
 
 
 app.MapControllers();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.Run();
 
