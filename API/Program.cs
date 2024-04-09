@@ -1,3 +1,5 @@
+using API.Seed;
+using Domain;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -20,6 +22,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    using var scope = app.Services.CreateScope();
+    var dataContext = scope.ServiceProvider.GetService<DataContext>();
+    dataContext?.SeedActivities();
+    dataContext?.SaveChanges();
 }
 
 
