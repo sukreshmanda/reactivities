@@ -16,10 +16,8 @@ public class ActivityController(DataContext dataContext) : BaseCrudController<Ac
         return await context.Activities.FirstAsync(a => a.Id.Equals(id));
     }
 
-    public override ActionResult<IEnumerable<Activity>> GetAll()
+    public override async Task<ActionResult<IEnumerable<Activity>>> GetAll()
     {
-        return context.Activities.AsAsyncEnumerable()
-                .ToBlockingEnumerable()
-                .ToList();
+        return await context.Activities.ToListAsync();
     }
 }
