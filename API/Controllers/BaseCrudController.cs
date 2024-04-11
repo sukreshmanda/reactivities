@@ -4,7 +4,7 @@ namespace API.Controllers;
 public abstract class BaseCrudController<T> : BaseController
 {
     [HttpGet]
-    public abstract IEnumerable<T> GetAll();
+    public abstract ActionResult<IEnumerable<T>> GetAll();
     [HttpGet("{id}")]
-    public abstract T Get([FromRoute] Guid id);
+    public abstract Task<ActionResult<T>> Get([FromRoute] Guid id);
 }

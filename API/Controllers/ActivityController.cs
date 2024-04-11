@@ -1,5 +1,8 @@
 using Domain;
 
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 using Persistence;
 
 namespace API.Controllers;
@@ -8,13 +11,15 @@ public class ActivityController(DataContext dataContext) : BaseCrudController<Ac
 {
     private readonly DataContext context = dataContext;
 
-    public override Activity Get(Guid id)
+    public override async Task<ActionResult<Activity>> Get(Guid id)
     {
-        return context.Activities.First(a => a.Id.Equals(id));
+        return await context.Activities.FirstAsync(a => a.Id.Equals(id));
     }
 
-    public override IEnumerable<Activity> GetAll()
+    public override ActionResult<IEnumerable<Activity>> GetAll()
     {
-        return context.Activities;
+        return context.Activities.AsAsyncEnumerable()
+                .ToBlockingEnumerable()
+                .ToList();
     }
 }
