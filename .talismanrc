@@ -1,4 +1,8 @@
 fileignoreconfig:
 - filename: Persistence/Migrations/20240409085956_InitialCreate.cs
   checksum: 7e33e727a5b94955d8418a3290ef8cf313b5ecb70892f336ba0bbb68afb91282
+- filename: client-app/public/vite.svg
+  checksum: 72dcd00faf326d08733d0f85f6769ceac3ed7cec17f4ef6009eaa472a001bd24
+- filename: client-app/package-lock.json
+  checksum: e1d0b67c1366d93fe9e0a3475b2cfef8ee35c363acf4d9993d8d43646c2fa048
 version: ""
