@@ -6,7 +6,7 @@ namespace API.Controllers;
 
 public class HealthController(ILogger<HealthController> logger) : BaseController
 {
-    private readonly ILogger<HealthController> logger = logger;
+    private readonly ILogger<HealthController> _logger = logger;
 
     [HttpGet(Name = "health")]
     public IActionResult Index() => Ok(new
