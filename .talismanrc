@@ -4,5 +4,7 @@ fileignoreconfig:
 - filename: client-app/public/vite.svg
   checksum: 72dcd00faf326d08733d0f85f6769ceac3ed7cec17f4ef6009eaa472a001bd24
 - filename: client-app/package-lock.json
-  checksum: e1d0b67c1366d93fe9e0a3475b2cfef8ee35c363acf4d9993d8d43646c2fa048
+  checksum: f55148e7fd943fdd315e8245db0f0db788138a27df3eeae02305b442e344bda8
+- filename: client-app/src/App.tsx
+  checksum: 096aa67c247b1a074f3878716ed28b24b77ff148935a032d8dafe29c40f0db49
 version: ""
